@@ -22,3 +22,12 @@ $ python3 app.py
 # open link "http://127.0.0.1:5000"
 
 ```
+
+### Helped by "chatGPT" in language
+
+```
+# HTML
+# CSS
+# JAVASCRIPT
+# C++
+
