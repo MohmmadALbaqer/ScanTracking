@@ -1,0 +1,6 @@
+socket
+colorama
+termcolor
+pyfiglet
+Flask
+sys
