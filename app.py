@@ -3,8 +3,7 @@ from termcolor import colored
 import pyfiglet
 import random
 
-colors = ['grey', 'red', 'green', 'yellow', 'blue', 'magenta', 'cyan', 'white',
-          'on_grey', 'on_red', 'on_green', 'on_yellow']
+colors = ['grey', 'red', 'green', 'yellow', 'blue', 'magenta', 'cyan', 'white']
 
 selected_color = random.choice(colors)
 
