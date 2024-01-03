@@ -28,26 +28,31 @@ print(f'''
  {Fore.RED}|{Fore.GREEN} GitHub{Fore.WHITE} : {Fore.BLUE}MohmmadALbaqer {Fore.WHITE}|{Fore.YELLOW}   https://www.instagram.com/r94xs/        {Fore.RED}|
  {Fore.RED}|{Fore.GREEN} Instagram{Fore.WHITE} :{Fore.BLUE} r94xs {Fore.WHITE}      |{Fore.YELLOW}   https://www.github.com/MohmmadALbaqer/  {Fore.RED}|
  {Fore.RED}+---------------------------------------------------------------------+
-''')
+{Style.RESET_ALL}''')
 
-os.system("ifconfig")
+response = input(f"{Fore.YELLOW}[{Fore.RED}+{Fore.YELLOW}] {Fore.WHITE}Do you want to execute the '{Fore.GREEN}ifconfig{Fore.WHITE}' command? ({Fore.GREEN}y{Fore.WHITE}/{Fore.RED}n{Fore.WHITE}): {Style.RESET_ALL}")
 
-class TerminalColors:
-    RED = '\033[91m'
-    GREEN = '\033[92m'
-    END = '\033[0m'
+if response.lower() == 'y':
+    os.system("ifconfig")
+    print(f"{Fore.GREEN}[+] {Fore.WHITE}ifconfig command executed.")
+    input(f"{Fore.GREEN}[+] {Fore.GREEN}copy {Fore.WHITE}please {Fore.GREEN}IP{Fore.WHITE} address then Click {Fore.BLUE}Enter{Style.RESET_ALL}")
+
+elif response.lower() == 'n':
+    print("Operation canceled.")
+else:
+    print("Invalid input.")
 
 def detect_spy_devices(host, port):
     try:
 
         with socket.create_connection((host, port), timeout=2):
-            print(f"{TerminalColors.RED}Warning: Spy device detected!{TerminalColors.END}")
+            print(f"{Fore.RED}[!] Warning: Spy device detected!{Style.RESET_ALL}")
 
     except (socket.timeout, ConnectionRefusedError):
-        print(f"{TerminalColors.GREEN}No problem, the server is secure.{TerminalColors.END}")
+        print(f"{Fore.GREEN}[+] No problem, the server is secure.{Style.RESET_ALL}")
 
-server_address = input(f"Enter the server {Fore.GREEN}IP {Fore.WHITE}address: {Style.RESET_ALL}")
-server_port = int(input(f"Enter the server {Fore.GREEN}port: {Style.RESET_ALL}"))
+server_address = input(f"{Fore.WHITE}Enter the server {Fore.GREEN}IP {Fore.WHITE}address: {Style.RESET_ALL}")
+server_port = int(input(f"{Fore.WHITE}Enter the server {Fore.GREEN}port: {Style.RESET_ALL}"))
 
 def wait_with_spinner(seconds, colors):
     symbols = "/-|\\"
